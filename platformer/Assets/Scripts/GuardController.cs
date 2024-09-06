@@ -30,11 +30,11 @@ public class GuardController : MonoBehaviour
             pos.x = pos.x - dist;
         }
 
-        //if (dist > Mathf.Abs(pos.x - target_pos.x))
-        //{
-        //    NextTarget();
-        //}
-        ClosestTarget();
+        if (dist > Mathf.Abs(pos.x - target_pos.x))
+        {
+            NextTarget();
+        }
+        //ClosestTarget();
 
         transform.position = pos;
     }
