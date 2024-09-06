@@ -5,7 +5,17 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    // Update is called once per frame
+    public float jumpForce = 5.0f;
+    public bool grounded = false;
+    
+    
+    public Rigidbody2D playerBody;
+
+    void Start()
+    {
+       playerBody = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         Vector3 pos = transform.position;
@@ -19,5 +29,17 @@ public class MovementController : MonoBehaviour
             pos.x -= distance;
         }
         transform.position = pos;
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)  
+        {
+            grounded = !grounded;
+            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
+        grounded = true;
     }
 }

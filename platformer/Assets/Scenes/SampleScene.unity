@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 305396703}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,6 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05860c0f62d6ca4886f4ba76507d280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 5
+  grounded: 0
+  playerBody: {fileID: 0}
 --- !u!212 &480690729
 SpriteRenderer:
   m_ObjectHideFlags: 0
