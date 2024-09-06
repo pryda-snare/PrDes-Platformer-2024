@@ -13,12 +13,12 @@ public class EnemyController : MonoBehaviour
         Vector3 pos = transform.position;
         float distance = 2 * Time.deltaTime;
 
-        if (pos.x > dest.x)
+        if (pos.x - 1 > dest.x)
         {
             pos.x -= distance;
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        else
+        else if (pos.x + 1 < dest.x)
         {
             pos.x += distance;
             GetComponent<SpriteRenderer>().flipX = false;
