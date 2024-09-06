@@ -23,10 +23,12 @@ public class MovementController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             pos.x += distance;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         if (Input.GetKey(KeyCode.A))
         {
             pos.x -= distance;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         transform.position = pos;
 

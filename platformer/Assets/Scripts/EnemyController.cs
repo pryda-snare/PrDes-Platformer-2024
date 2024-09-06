@@ -16,10 +16,12 @@ public class EnemyController : MonoBehaviour
         if (pos.x > dest.x)
         {
             pos.x -= distance;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         else
         {
             pos.x += distance;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
 
         transform.position = pos;
