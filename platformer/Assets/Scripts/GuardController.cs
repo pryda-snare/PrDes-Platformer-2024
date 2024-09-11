@@ -20,7 +20,8 @@ public class GuardController : MonoBehaviour
     // and one variable that contains a integer called "index" and set it to be 0 (zero)
     // When you have done this go to the next step "TODO: W1.2"
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    public GameObject[] waypoints;
+    public int index = 0;
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     
     public GameObject target;
@@ -33,7 +34,7 @@ public class GuardController : MonoBehaviour
         // at "index" index in the waypoints list 
         // Next step "TODO: W1.3"
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+        target = waypoints[index];
         ////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
@@ -60,7 +61,10 @@ public class GuardController : MonoBehaviour
         // In that "if" statement call the function "NextWayPoint"
         // Now you've finished the WAYPOINTS 1 excersise 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+            //if (Mathf.Abs(pos.x - dest.x) < distance)
+            //{
+            //    NextWaypoint();
+            //}
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         
         // TODO W2.2
@@ -68,7 +72,7 @@ public class GuardController : MonoBehaviour
         // Call the Method/function "TargetClosest" from the previous step.
         // Now you've finished the WAYPOINTS 2 excersise 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        TargetClosest();
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         transform.position = pos;
@@ -82,7 +86,12 @@ public class GuardController : MonoBehaviour
     // 4. Assign the "target" variable the gameobject at "index" index in the "waypoints" variable list 
     // Next step "TODO: W1.4"
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+    private void NextWaypoint()
+    {
+        index++;
+        index = index % waypoints.Length;
+        target = waypoints[index];
+    }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     
 
@@ -99,6 +108,20 @@ public class GuardController : MonoBehaviour
     // 5. assign the "target" variable the "closest" variable **OUTSIDE THE FOR EACH LOOP**
     // Next step "TODO: W2.2"
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+    private void TargetClosest()
+    {
+         GameObject closest = null;
+         double shortest = double.MaxValue;
+         foreach (var waypoint in waypoints) 
+         {
+              double dist = Vector3.Distance(transform.position, waypoint.transform.position);
+              if (dist < shortest)
+              {
+                   shortest = dist;
+                   closest = waypoint;
+              }
+          }
+          target = closest;
+     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 }
