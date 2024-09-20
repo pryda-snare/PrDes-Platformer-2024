@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 328192645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -219,9 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8fb84a6ffe50343850f10dadda28ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 972179054}
-  - {fileID: 1409592721}
+  hp: 1
+  damage: 1
+  speed: 2
+  sprite: {fileID: 0}
+  type: 1
   index: 0
   target: {fileID: 0}
 --- !u!1 &480690727
@@ -236,7 +238,7 @@ GameObject:
   - component: {fileID: 480690729}
   - component: {fileID: 480690728}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,27 +453,14 @@ GameObject:
   m_Component:
   - component: {fileID: 747797705}
   - component: {fileID: 747797704}
-  - component: {fileID: 747797703}
+  - component: {fileID: 747797706}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Chase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &747797703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747797702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb111a5ccbbe8a47b45f0cd18c9d481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 480690727}
 --- !u!212 &747797704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -533,12 +522,29 @@ Transform:
   m_GameObject: {fileID: 747797702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &747797706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747797702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb111a5ccbbe8a47b45f0cd18c9d481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  damage: 1
+  speed: 2
+  sprite: {fileID: 0}
+  type: 0
 --- !u!1 &871354726
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +707,7 @@ Transform:
   m_GameObject: {fileID: 2019598829}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.090564564, y: -1.3985211, z: -0.0043163192}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
