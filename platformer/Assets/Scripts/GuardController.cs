@@ -17,6 +17,8 @@ public class GuardController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TargetClosest();
+        
         var dest = target.transform.position;
         var pos = transform.position;
         var distance = 2 * Time.deltaTime;
@@ -43,8 +45,6 @@ public class GuardController : MonoBehaviour
         {
             NextWaypoint();
         }*/
-        
-        TargetClosest();
 
         transform.position = pos;
     }
@@ -62,13 +62,25 @@ public class GuardController : MonoBehaviour
          double shortest = double.MaxValue;
          foreach (var waypoint in waypoints) 
          {
-              double dist = Vector3.Distance(transform.position, waypoint.transform.position);
-              if (dist < shortest)
-              {
-                   shortest = dist;
-                   closest = waypoint;
-              }
+             if (waypoint != null)
+             {
+                 double dist = Vector3.Distance(transform.position, waypoint.transform.position);
+                 if (dist < shortest)
+                 {
+                     shortest = dist;
+                     closest = waypoint;
+                 }
+             }
           }
           target = closest;
      }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("killed");
+            Destroy(other.gameObject);
+        }
+    }
 }
