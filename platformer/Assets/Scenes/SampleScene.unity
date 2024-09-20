@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 328192646}
   - component: {fileID: 328192648}
   m_Layer: 0
-  m_Name: Guard
+  m_Name: Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,8 +222,8 @@ MonoBehaviour:
   waypoints:
   - {fileID: 972179054}
   - {fileID: 1409592721}
-  index: 0
   target: {fileID: 0}
+  index: 0
 --- !u!1 &480690727
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 747797704}
   - component: {fileID: 747797703}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Chasing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
