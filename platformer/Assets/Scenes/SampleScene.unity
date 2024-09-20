@@ -224,7 +224,11 @@ MonoBehaviour:
   speed: 2
   sprite: {fileID: 0}
   type: 1
-  index: 0
+  waypoints:
+  - {fileID: 972179054}
+  - {fileID: 1409592721}
+  - {fileID: 1783529313}
+  index: 1
   target: {fileID: 0}
 --- !u!1 &480690727
 GameObject:
@@ -676,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 1783529313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 12.95, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -707,7 +711,7 @@ Transform:
   m_GameObject: {fileID: 2019598829}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
