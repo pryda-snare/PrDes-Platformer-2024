@@ -325,6 +325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 392399498106771258, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4696813711825311876, guid: 811b123ecae7e9a46a532bb040758e99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -387,17 +391,9 @@ PrefabInstance:
       value: Guard
       objectReference: {fileID: 0}
     - target: {fileID: 2019581861918175982, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
-      propertyPath: waypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019581861918175982, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 480690727}
-    - target: {fileID: 2019581861918175982, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
-      propertyPath: waypoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2083311376489435740, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -436,6 +432,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2083311376489435740, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677156323618991459, guid: fadb2b7274c159546b7c2339474a4333, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
