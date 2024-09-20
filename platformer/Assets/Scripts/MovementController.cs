@@ -10,6 +10,8 @@ public class MovementController : MonoBehaviour
     {
         Vector3 pos = transform.position;
         float distance = 5 * Time.deltaTime;
+        
+        // movement along the x axis
         if (Input.GetKey(KeyCode.D))
         {
             pos.x += distance;
@@ -18,6 +20,17 @@ public class MovementController : MonoBehaviour
         {
             pos.x -= distance;
         }
+        
+        // movement along the y axis 
+        if (Input.GetKey(KeyCode.W))
+        {
+            pos.y += distance;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            pos.y -= distance;
+        }
+        
         transform.position = pos;
     }
 }

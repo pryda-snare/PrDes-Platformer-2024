@@ -21,6 +21,15 @@ public class EnemyController : MonoBehaviour
         {
             pos.x += distance;
         }
+        
+        if (pos.y > dest.y)
+        {
+            pos.y -= distance;
+        }
+        else
+        {
+            pos.y += distance;
+        }
 
         transform.position = pos;
     }
