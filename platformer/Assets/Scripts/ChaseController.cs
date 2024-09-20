@@ -31,7 +31,7 @@ public class ChaseController : EnemyClass
     {
         Vector3 dest = m_target.transform.position;
         Vector3 pos = transform.position;
-        float distance = 2 * Time.deltaTime;
+        float distance = speed * Time.deltaTime;
 
         if (pos.x > dest.x)
         {
