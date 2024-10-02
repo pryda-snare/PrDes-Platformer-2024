@@ -35,14 +35,14 @@ public class GuardController : MonoBehaviour
                 pos.x += distance;
             }
             
-            if (pos.y > dest.y)
+            /*if (pos.y > dest.y)
             {
                 pos.y -= distance;
             }
             else
             {
                 pos.y += distance;
-            }
+            }*/
             
             /*if (Mathf.Abs(pos.x - dest.x) < distance)
             {
