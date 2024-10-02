@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   halfWidth: 17
   halfHeight: 10
+  jumpForce: 5
+  grounded: 0
+  playerBody: {fileID: 0}
 --- !u!61 &939317687602508578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,7 +176,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8741963966756456399
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -8,7 +8,16 @@ public class MovementController : MonoBehaviour
 {
     public int halfWidth = 17;
     public int halfHeight = 10;
-    
+
+    public float jumpForce = 5.0f;
+    public bool grounded = false;
+    public Rigidbody2D playerBody;
+
+    void Start()
+    {
+        playerBody = GetComponent<Rigidbody2D>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,16 +35,22 @@ public class MovementController : MonoBehaviour
         }
         
         // movement along the y axis 
-        if (Input.GetKey(KeyCode.W) && pos.y < halfHeight)
+        /*if (Input.GetKey(KeyCode.W) && pos.y < halfHeight)
         {
             pos.y += distance;
         }
         if (Input.GetKey(KeyCode.S) && pos.y > -halfHeight)
         {
             pos.y -= distance;
-        }
+        }*/
         
         transform.position = pos;
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
+            grounded = !grounded;
+            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+        }
     }
 
 
