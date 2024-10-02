@@ -62,4 +62,10 @@ public class MovementController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
+        grounded = true;
+    }
 }
