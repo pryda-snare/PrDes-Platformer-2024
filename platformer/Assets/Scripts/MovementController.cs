@@ -66,6 +66,9 @@ public class MovementController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("OnCollisionEnter2D");
-        grounded = true;
+        if (col.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
 }
