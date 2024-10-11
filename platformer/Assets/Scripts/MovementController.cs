@@ -13,6 +13,7 @@ public class MovementController : MonoBehaviour
     public bool grounded = false;
     public Rigidbody2D playerBody;
 
+    // Initialize the inventory dictionary
     public Dictionary<string, int> pickedFruits = new Dictionary<string, int>();
 
     void Start()
@@ -76,14 +77,15 @@ public class MovementController : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             grounded = true;
-        }else if(col.gameObject.tag == "Fruit"){
-            string fruitTag = col.gameObject.GetComponent<FruitScript>().fruitTag;
-            if (pickedFruits.ContainsKey(fruitTag)){
-                pickedFruits[fruitTag] += 1;
+        }else if(col.gameObject.tag == "Fruit") // I'm checking that the tag of the collided object is "Fruit"
+        {
+            string fruitTag = col.gameObject.GetComponent<FruitScript>().fruitTag; // I'm getting the fruitTag from the Fruit object's script
+            if (pickedFruits.ContainsKey(fruitTag)){ // I'm checking if the inventory already contrains that fruit
+                pickedFruits[fruitTag] += 1; // If yes, increment the counter for that fruit
             }else{
-                pickedFruits.Add(fruitTag, 1);
+                pickedFruits.Add(fruitTag, 1); // If no, add the first item (fruit) and set its counter to 1
             }
-            Destroy(col.gameObject);
+            Destroy(col.gameObject); // Delete the fruit object from the scene and the memory
         }
     }
 }

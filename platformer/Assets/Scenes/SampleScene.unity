@@ -272,6 +272,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 3242056872348469597, guid: cc6cc65f2ddb6604ab3b74ad2d5e6257, type: 3}
+      propertyPath: m_Color.b
+      value: 0.23137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242056872348469597, guid: cc6cc65f2ddb6604ab3b74ad2d5e6257, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242056872348469597, guid: cc6cc65f2ddb6604ab3b74ad2d5e6257, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
     - target: {fileID: 6558442577645594739, guid: cc6cc65f2ddb6604ab3b74ad2d5e6257, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
