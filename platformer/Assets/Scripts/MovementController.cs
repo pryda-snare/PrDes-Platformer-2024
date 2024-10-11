@@ -13,6 +13,8 @@ public class MovementController : MonoBehaviour
     public bool grounded = false;
     public Rigidbody2D playerBody;
 
+    public Dictionary<string, int> pickedFruits = new Dictionary<string, int>();
+
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -51,6 +53,11 @@ public class MovementController : MonoBehaviour
             grounded = !grounded;
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
+
+        foreach (KeyValuePair<string,int> tag_Count in pickedFruits){
+            Debug.Log(tag_Count.Key + ":" + tag_Count.Value);
+        }
+        
     }
 
 
@@ -69,6 +76,14 @@ public class MovementController : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             grounded = true;
+        }else if(col.gameObject.tag == "Fruit"){
+            string fruitTag = col.gameObject.GetComponent<FruitScript>().fruitTag;
+            if (pickedFruits.ContainsKey(fruitTag)){
+                pickedFruits[fruitTag] += 1;
+            }else{
+                pickedFruits.Add(fruitTag, 1);
+            }
+            Destroy(col.gameObject);
         }
     }
 }
