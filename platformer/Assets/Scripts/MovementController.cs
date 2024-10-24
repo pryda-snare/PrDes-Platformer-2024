@@ -16,6 +16,11 @@ public class MovementController : MonoBehaviour
     // Initialize the inventory dictionary
     public Dictionary<string, int> pickedFruits = new Dictionary<string, int>();
 
+    //Jump Boost Stats
+    public bool isBoosted;
+    float boostTime = 5f;
+    public float boostCounter = 0;
+
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -52,13 +57,35 @@ public class MovementController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             grounded = !grounded;
-            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+
+            if(isBoosted)
+            {
+                playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce * 2);
+
+                BoostCountdown();
+            }
+            else
+            {
+                playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+            }
         }
 
         foreach (KeyValuePair<string,int> tag_Count in pickedFruits){
             Debug.Log(tag_Count.Key + ":" + tag_Count.Value);
-        }
+        }      
+    }
+
+    void BoostCountdown()
+    {
+        //Count up unitl 5 seconds to stop the boost. The timer starts again from zero
+        //any time the player picks a new fruit
+        boostCounter += Time.deltaTime;
         
+        if(boostCounter >= boostTime)
+        {
+            isBoosted = false;
+            boostCounter = 0;
+        }
     }
 
 
@@ -85,6 +112,13 @@ public class MovementController : MonoBehaviour
             }else{
                 pickedFruits.Add(fruitTag, 1); // If no, add the first item (fruit) and set its counter to 1
             }
+            
+            col.gameObject.GetComponent<FruitScript>().Collect(); //Call object Collect method through its scripts
+            Destroy(col.gameObject); // Delete the fruit object from the scene and the memory
+        }
+        else if(col.gameObject.tag == "Gem")
+        {
+            col.gameObject.GetComponent<GemScript>().Collect(); //Call object Collect method through its scripts
             Destroy(col.gameObject); // Delete the fruit object from the scene and the memory
         }
     }

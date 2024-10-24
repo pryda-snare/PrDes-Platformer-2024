@@ -4,11 +4,15 @@ using System.IO;
 using UnityEditor.U2D;
 using UnityEngine;
 
-public class FruitScript : MonoBehaviour
+public class FruitScript : MonoBehaviour, ICollectible
 {
     // Start is called before the first frame update
     public Dictionary<string, Sprite> sprites = new Dictionary<string,Sprite>();
     public string fruitTag = "Apple_0"; 
+
+    //Reference to the Player
+    public MovementController movementController;
+
     void Start()
     {
         // Get all the "Sprite" resources from the "Resource" folder in the Sprite[] array
@@ -41,5 +45,12 @@ public class FruitScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Collect()
+    {
+        //Setup player jump boost state and timer
+        movementController.isBoosted = true;
+        movementController.boostCounter = 0;
     }
 }

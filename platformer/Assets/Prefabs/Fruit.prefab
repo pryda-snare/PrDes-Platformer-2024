@@ -159,7 +159,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7404051828210154143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitTag: Melon_0
+  movementController: {fileID: 0}

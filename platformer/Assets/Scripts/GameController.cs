@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public TextMeshProUGUI scoreText;
+    int score;
     public GameObject player;
     public GameObject guard;
     public GameObject[] enemies;
@@ -41,5 +45,12 @@ public class GameController : MonoBehaviour
         float randX = Random.Range(-17.0f, 17.0f);
         
         return Instantiate(enemyPrefab, new Vector3(randX, randY, 0), Quaternion.identity);
+    }
+
+    public void AddScore()
+    {
+        //Update score value first then append it to the UI string
+        score++;
+        scoreText.text = "Score: " + score.ToString();
     }
 }
