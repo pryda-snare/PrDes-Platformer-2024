@@ -1687,6 +1687,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Fruit
       objectReference: {fileID: 0}
+    - target: {fileID: 607154337213383301, guid: 51b31b7ee85ce40ed8d535db8bfa1d97, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8636199874260968408, guid: 51b31b7ee85ce40ed8d535db8bfa1d97, type: 3}
       propertyPath: movementController
       value: 

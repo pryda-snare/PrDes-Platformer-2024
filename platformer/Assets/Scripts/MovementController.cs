@@ -17,7 +17,7 @@ public class MovementController : MonoBehaviour
     public Dictionary<string, int> pickedFruits = new Dictionary<string, int>();
 
     //Jump Boost Stats
-    public bool isBoosted;
+    public bool isBoosted = false;
     float boostTime = 5f;
     public float boostCounter = 0;
 
@@ -61,8 +61,6 @@ public class MovementController : MonoBehaviour
             if(isBoosted)
             {
                 playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce * 2);
-
-                BoostCountdown();
             }
             else
             {
@@ -73,6 +71,11 @@ public class MovementController : MonoBehaviour
         foreach (KeyValuePair<string,int> tag_Count in pickedFruits){
             Debug.Log(tag_Count.Key + ":" + tag_Count.Value);
         }      
+
+        if(isBoosted)
+        {
+            BoostCountdown();
+        }
     }
 
     void BoostCountdown()
