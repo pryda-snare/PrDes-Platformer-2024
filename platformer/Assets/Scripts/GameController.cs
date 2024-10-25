@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
         // iterate through the enemies and assign the player as the target
         foreach (GameObject enemy in enemies)
         {
-            enemy.GetComponent<EnemyController>().target = player;
+            enemy.GetComponent<EnemyController>().setTarget(player);
         }
         
         // assign the enemies array as the waypoints for the guard
