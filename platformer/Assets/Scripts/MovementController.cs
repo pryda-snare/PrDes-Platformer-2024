@@ -9,8 +9,6 @@ public class MovementController : MonoBehaviour
     public int halfWidth = 17;
     public int halfHeight = 10;
 
-    public float jumpForce = 5.0f;
-    public bool grounded = false;
     public Rigidbody2D playerBody;
 
     void Start()
@@ -34,41 +32,6 @@ public class MovementController : MonoBehaviour
             pos.x -= distance;
         }
         
-        // movement along the y axis 
-        /*if (Input.GetKey(KeyCode.W) && pos.y < halfHeight)
-        {
-            pos.y += distance;
-        }
-        if (Input.GetKey(KeyCode.S) && pos.y > -halfHeight)
-        {
-            pos.y -= distance;
-        }*/
-        
         transform.position = pos;
-
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            grounded = !grounded;
-            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
-        }
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Enemy")
-        {
-            Debug.Log("ded");
-            Destroy(gameObject);
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("OnCollisionEnter2D");
-        if (col.gameObject.tag == "Ground")
-        {
-            grounded = true;
-        }
     }
 }
