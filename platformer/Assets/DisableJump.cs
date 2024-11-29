@@ -1,26 +1,30 @@
+using TMPro;
 using UnityEngine;
 
 public class DisableJump : MonoBehaviour
 {
     public jumpController targetScript;
     private bool check = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public TextMeshProUGUI textToshow;
+
+    //for disabling the other
+    public GameObject enGameObject;
+    private enableJump enjump;
+
+    private void Start()
     {
+        enjump = enGameObject.GetComponent<enableJump>();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player" && check == false)
         {
             targetScript.enabled = false;
+            textToshow.color = Color.green;
+            enjump.turnoffColorMethod();
             check = true;
         }
     }
@@ -33,4 +37,9 @@ public class DisableJump : MonoBehaviour
         }
     }
 
+
+    public void turnoffColorMethod()
+    {
+        textToshow.color = Color.white;
+    }
 }
