@@ -21,6 +21,10 @@ public class addJumpForceMethod : MonoBehaviour
             textToshow.text = "" + HowMuchToAdd;
             check = true;
         }
+        else
+        {
+            Debug.Log("already inside trigger");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

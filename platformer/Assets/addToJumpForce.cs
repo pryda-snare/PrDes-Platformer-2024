@@ -8,6 +8,7 @@ public class addToJumpForce : MonoBehaviour
 
     public int number;
     private addJumpForceMethod getnumber;
+    private addjumpforceWithoutIf getnumber2;
 
     private jumpController jumpC;
 
@@ -25,9 +26,18 @@ public class addToJumpForce : MonoBehaviour
     {
         if (col.gameObject.tag == "Player" && check == false)
         {
-            number = getnumber.HowMuchToAdd;
-            jumpC.jumpForce = number;
-            check = true;
+            if(getnumber.enabled)
+            {
+                number = getnumber.HowMuchToAdd;
+                jumpC.jumpForce = number;
+                check = true;
+            }
+           else if (getnumber2.enabled)
+            {
+                number = getnumber2.HowMuchToAd;
+                jumpC.jumpForce = number;
+                check = true;
+            }
         }
     }
 

@@ -19,22 +19,9 @@ public class enableJump : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player" && check==false)
-        {
-            targetScript.enabled = true;
+            targetScript.enabled = true; //enable jump script
             textToshow.color = Color.green;
             disjump.turnoffColorMethod();
-            check = true;
-
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            check = false; 
-        }
     }
 
     public void turnoffColorMethod()

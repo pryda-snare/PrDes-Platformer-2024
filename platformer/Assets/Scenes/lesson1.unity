@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move with A and D
+  m_text: 'Methods: Move with A and D'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1406,6 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7e858aa64a64b00a2819fae8cd2313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: lesson2
 --- !u!61 &958727995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1465,8 +1466,8 @@ GameObject:
   - component: {fileID: 1078374400}
   - component: {fileID: 1078374404}
   m_Layer: 0
-  m_Name: Powerup-disable jump
-  m_TagString: Untagged
+  m_Name: Powerup2
+  m_TagString: butt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1607,8 +1608,8 @@ GameObject:
   - component: {fileID: 1437890799}
   - component: {fileID: 1437890800}
   m_Layer: 0
-  m_Name: Powerup-enable jump
-  m_TagString: Untagged
+  m_Name: Powerup1
+  m_TagString: butt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
