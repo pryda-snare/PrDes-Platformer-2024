@@ -36,4 +36,9 @@ public class jumpController : MonoBehaviour
             grounded = true;
         }
     }
+
+
+
+
 }
+

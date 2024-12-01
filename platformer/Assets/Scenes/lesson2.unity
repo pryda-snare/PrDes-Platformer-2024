@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 120310132}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.76, y: -2.57, z: 0}
+  m_LocalPosition: {x: 6.25, y: -2.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -311,8 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da93192c0b13e4052929d781aee9c610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HowMuchToAdd: -2
   textToshow: {fileID: 1475602549}
+  otherobject: {fileID: 1078374399}
+  otherscript: {fileID: 1078374405}
 --- !u!58 &126219755
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -413,7 +414,7 @@ Transform:
   m_GameObject: {fileID: 126219753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.78, y: -2.58, z: 0}
+  m_LocalPosition: {x: -11.43, y: -2.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -445,8 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d97919f722f405b9903ff2065315af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HowMuchToAdd: -2
   textToshow: {fileID: 1475602549}
+  otherobject: {fileID: 1078374399}
 --- !u!1001 &235529384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1943,10 +1944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8698b9c92801041c7ab290abb155995a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go1otherbutton: {fileID: 126219753}
-  go2Player: {fileID: 480690727}
-  check: 0
   number: 0
+  thePlayer: {fileID: 480690727}
 --- !u!114 &1078374406
 MonoBehaviour:
   m_ObjectHideFlags: 0

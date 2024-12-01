@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class enableJump : MonoBehaviour
 {
-    public  jumpController targetScript;
-    private bool check = false;
+    public jumpController targetScript;
     public TextMeshProUGUI textToshow;
 
     //for disabling the other

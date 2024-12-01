@@ -4,21 +4,26 @@ using TMPro;
 public class addJumpForceMethod : MonoBehaviour
 {
     private bool check = false;
-    public int HowMuchToAdd = -2;
+    private bool check2 = false;
     public TextMeshProUGUI textToshow;
+
+    public GameObject otherobject;
+    public addToJumpForce otherscript;
+
+    //private addjumpforceWithoutIf otherscript;
 
     private void Start()
     {
-        textToshow.text = ""+HowMuchToAdd;
+        otherscript = otherobject.GetComponent<addToJumpForce>();
     }
 
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player" && check == false)
+        if (col.gameObject.tag == "Player" && check == false && check2 == true)
         {
-            HowMuchToAdd++;
-            textToshow.text = "" + HowMuchToAdd;
+            otherscript.number++;
+            textToshow.text = "" + otherscript.number;
             check = true;
         }
         else
@@ -35,5 +40,14 @@ public class addJumpForceMethod : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        check2 = false;
+    }
+
+    private void OnEnable()
+    {
+        check2 = true;
+    }
 }
 

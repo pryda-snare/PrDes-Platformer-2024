@@ -4,7 +4,6 @@ using UnityEngine;
 public class DisableJump : MonoBehaviour
 {
     public jumpController targetScript;
-    private bool check = false;
     public TextMeshProUGUI textToshow;
 
     //for disabling the other
