@@ -4,7 +4,6 @@ public class jumpController : MonoBehaviour
 {
 
     public float jumpForce = 5.0f;
-    public bool grounded = false;
     public Rigidbody2D playerBody;
 
 
@@ -18,26 +17,11 @@ public class jumpController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && playerBody.linearVelocity.y == 0)
         {
-            grounded = !grounded;
             playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, jumpForce);
         }
-
-
-
     }
-
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Ground")
-        {
-            grounded = true;
-        }
-    }
-
-
 
 
 }

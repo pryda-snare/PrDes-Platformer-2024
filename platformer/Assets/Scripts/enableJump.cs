@@ -19,13 +19,19 @@ public class enableJump : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
             targetScript.enabled = true; //enable jump script
-            textToshow.color = Color.green;
-            disjump.turnoffColorMethod();
+            SetColorMethod(Color.green);
+            disjump.SetColorMethod(Color.white);
+            Debug.Log(MyName());
     }
 
-    public void turnoffColorMethod()
+    public void SetColorMethod(Color c)
     {
-        textToshow.color = Color.white;
+        textToshow.color = c;
+    }
+
+    public string MyName()
+    {
+        return gameObject.name + "activated";
     }
 
 }

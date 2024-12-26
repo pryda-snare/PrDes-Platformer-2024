@@ -14,9 +14,6 @@ public class colorcontrol : MonoBehaviour
 
     }
 
-
-
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player" && check == false)

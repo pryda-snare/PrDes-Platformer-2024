@@ -23,6 +23,7 @@ public class addjumpforceWithoutIf : MonoBehaviour
         textToshow.text = "" + otherscript.number;
     }
 
+
     private void OnDisable()
     {
         val = 0;

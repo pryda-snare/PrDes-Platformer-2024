@@ -7,6 +7,11 @@ public class enableScript : MonoBehaviour
     public List<MonoBehaviour> scriptsToDisable;
     public bool check = false;
 
+
+
+
+
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player" && check == false)

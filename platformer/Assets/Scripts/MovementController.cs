@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    public int halfWidth = 17;
-    public int halfHeight = 10;
-
     public Rigidbody2D playerBody;
 
     void Start()
@@ -23,11 +20,11 @@ public class MovementController : MonoBehaviour
         float distance = 5 * Time.deltaTime;
         
         // movement along the x axis
-        if (Input.GetKey(KeyCode.D) && pos.x < halfWidth)
+        if (Input.GetKey(KeyCode.D))
         {
             pos.x += distance;
         }
-        if (Input.GetKey(KeyCode.A) && pos.x > -halfWidth)
+        if (Input.GetKey(KeyCode.A))
         {
             pos.x -= distance;
         }
