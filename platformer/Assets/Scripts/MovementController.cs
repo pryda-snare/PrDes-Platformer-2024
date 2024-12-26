@@ -12,9 +12,14 @@ public class MovementController : MonoBehaviour
     public float jumpForce = 5.0f;
     public bool grounded = false;
     public Rigidbody2D playerBody;
+    public float runSpeed = 12f;
 
     // Initialize the inventory dictionary
     public Dictionary<string, int> pickedFruits = new Dictionary<string, int>();
+
+
+    public Animator animator;
+
 
     void Start()
     {
@@ -25,40 +30,36 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        float distance = 5 * Time.deltaTime;
-        
+        float x_dir = 0;
+ 
         // movement along the x axis
         if (Input.GetKey(KeyCode.D) && pos.x < halfWidth)
         {
-            pos.x += distance;
+            x_dir += 1;
         }
         if (Input.GetKey(KeyCode.A) && pos.x > -halfWidth)
         {
-            pos.x -= distance;
+            x_dir -= 1;
         }
-        
-        // movement along the y axis 
-        /*if (Input.GetKey(KeyCode.W) && pos.y < halfHeight)
-        {
-            pos.y += distance;
-        }
-        if (Input.GetKey(KeyCode.S) && pos.y > -halfHeight)
-        {
-            pos.y -= distance;
-        }*/
+
+        playerBody.linearVelocity = new Vector2(x_dir * runSpeed, playerBody.linearVelocityY);
         
         transform.position = pos;
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             grounded = !grounded;
-            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+            playerBody.linearVelocity = new Vector2(playerBody.linearVelocity.x, jumpForce);
         }
 
         foreach (KeyValuePair<string,int> tag_Count in pickedFruits){
             Debug.Log(tag_Count.Key + ":" + tag_Count.Value);
         }
-        
+
+
+        animator.SetFloat("xSpeed", MathF.Abs(playerBody.linearVelocityX));
+        animator.SetFloat("yVelocity", playerBody.linearVelocityY);
+        animator.SetBool("isGrounded", grounded);
     }
 
 
