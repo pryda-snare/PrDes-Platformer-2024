@@ -1,34 +1,31 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class MovementController : MonoBehaviour
 {
     public Rigidbody2D playerBody;
+    public float moveSpeed = 5f; // Movement speed
 
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
-        float distance = 5 * Time.deltaTime;
-        
-        // movement along the x axis
-        if (Input.GetKey(KeyCode.D))
+        // Get horizontal input (-1 for A, +1 for D, or 0 for no input)
+        float horizontalInput = 0;
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            pos.x += distance;
+            horizontalInput = 1;
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            pos.x -= distance;
+            horizontalInput = -1;
         }
-        
-        transform.position = pos;
+
+        // Apply horizontal velocity
+        playerBody.linearVelocity = new Vector2(horizontalInput * moveSpeed, playerBody.linearVelocity.y);
     }
 }
