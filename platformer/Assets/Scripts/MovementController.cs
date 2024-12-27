@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UIElements;
 
 public class MovementController : MonoBehaviour
 {
     public Rigidbody2D playerBody;
+
     public float moveSpeed = 5f; // Movement speed
+    public float horizontalInput = 0;
 
     void Start()
     {
@@ -14,8 +18,7 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        // Get horizontal input (-1 for A, +1 for D, or 0 for no input)
-        float horizontalInput = 0;
+        horizontalInput = 0;
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontalInput = 1;

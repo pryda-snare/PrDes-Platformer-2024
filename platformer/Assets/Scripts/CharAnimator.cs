@@ -1,9 +1,14 @@
 using UnityEngine;
+using System;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody2D))] // go to way to make sure it has a rigidbody
 public class CharAnimator : MonoBehaviour
 {
     public Animator animator;
+    public SpriteRenderer _renderer;
+    public MovementController MC;
     public string idle = "playerIdle";
     public string run = "playRun";
     public string fall = "playerFall";
@@ -11,6 +16,7 @@ public class CharAnimator : MonoBehaviour
 
     private Rigidbody2D rb;
 
+   
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,11 +30,10 @@ public class CharAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"VelocityX: {rb.linearVelocityX}, VelocityY: {rb.linearVelocityY}");
+        if (MC.horizontalInput != 0) _renderer.flipX = MC.horizontalInput < 0;
         if (rb.linearVelocityY > 0)
         {
             animator.CrossFade(jump, 0, 0);
-            //animator.Play(jump);
         }
         else if (rb.linearVelocityY < 0)
         {
@@ -40,8 +45,12 @@ public class CharAnimator : MonoBehaviour
         }
         else
         {
-
             animator.Play(idle);
         }
     }
+
+ 
 }
+
+
+

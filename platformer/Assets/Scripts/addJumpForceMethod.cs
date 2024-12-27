@@ -4,7 +4,7 @@ using TMPro;
 public class addJumpForceMethod : MonoBehaviour
 {
     private bool check = false;
-    private bool check2 = false;
+    private bool isEnabled = false;
     public TextMeshProUGUI textToshow;
 
     public GameObject otherobject;
@@ -20,7 +20,9 @@ public class addJumpForceMethod : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player" && check == false && check2 == true)
+
+        //if (col.gameObject.tag == "Player" && check == false && isEnabled == true)
+        if (col.gameObject.tag == "Player" && !check && isEnabled)
         {
             otherscript.number++;
             textToshow.text = "" + otherscript.number;
@@ -42,12 +44,12 @@ public class addJumpForceMethod : MonoBehaviour
 
     private void OnDisable()
     {
-        check2 = false;
+        isEnabled = false;
     }
 
     private void OnEnable()
     {
-        check2 = true;
+        isEnabled = true;
     }
 }
 
