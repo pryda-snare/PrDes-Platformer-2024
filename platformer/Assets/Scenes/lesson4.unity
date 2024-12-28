@@ -2470,6 +2470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fruits: 0
   textToShow: {fileID: 553250130}
+  text2: {fileID: 161738685}
   timesToWin: 10
 --- !u!1001 &1023730627
 PrefabInstance:
@@ -2678,7 +2679,6 @@ Transform:
   - {fileID: 669660880}
   - {fileID: 1846399716}
   - {fileID: 1977744604}
-  - {fileID: 1495195522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1146695527
@@ -3126,11 +3126,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 161738684}
-  m_Father: {fileID: 1127124248}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -22, y: -28.11}
+  m_AnchoredPosition: {x: -11.98, y: -20.57}
   m_SizeDelta: {x: 54.8064, y: 22.0276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1495195523
@@ -4551,6 +4551,7 @@ SceneRoots:
   - {fileID: 139311821}
   - {fileID: 1146695527}
   - {fileID: 1999068853}
+  - {fileID: 1495195522}
   - {fileID: 1127124248}
   - {fileID: 1475568996}
   - {fileID: 1541214724}
