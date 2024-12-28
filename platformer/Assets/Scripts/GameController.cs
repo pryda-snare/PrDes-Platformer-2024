@@ -6,7 +6,6 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject player;
-    public GameObject guard;
     public GameObject[] enemies;
     
     public int enemiesCount = 5;
@@ -31,8 +30,6 @@ public class GameController : MonoBehaviour
             enemy.GetComponent<EnemyController>().target = player;
         }
         
-        // assign the enemies array as the waypoints for the guard
-        guard.GetComponent<GuardController>().waypoints = enemies;
     }
 
     private GameObject SpawnEnemyRandomPos()

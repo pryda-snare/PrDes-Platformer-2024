@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 126219757}
   - component: {fileID: 126219756}
   - component: {fileID: 126219755}
+  - component: {fileID: 126219758}
   m_Layer: 0
   m_Name: Powerup-1
   m_TagString: butt
@@ -244,6 +245,22 @@ Transform:
   - {fileID: 1544474083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126219758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126219753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35379099fa1f6746bb83fb690f972e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 480690727}
+  enemies: []
+  enemiesCount: 5
+  enemyPrefab: {fileID: 0}
 --- !u!1001 &139311821
 PrefabInstance:
   m_ObjectHideFlags: 0
