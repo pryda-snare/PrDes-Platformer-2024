@@ -18,7 +18,7 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = 0;
+        horizontalInput = 0 ;
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontalInput = 1;

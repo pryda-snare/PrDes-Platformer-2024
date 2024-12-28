@@ -1,9 +1,8 @@
 using UnityEngine;
 using System;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(Rigidbody2D))] // go to way to make sure it has a rigidbody
+[RequireComponent(typeof(Rigidbody2D))]
 public class CharAnimator : MonoBehaviour
 {
     public Animator animator;
@@ -16,40 +15,74 @@ public class CharAnimator : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public enum PlayerState { Idle, Run, Jump, Fall}
+
+    private PlayerState currentState;
    
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        rb = GetComponent<Rigidbody2D>();
        animator = gameObject.GetComponent<Animator>();
        animator.Play(idle);
+       currentState = PlayerState.Idle;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (MC.horizontalInput != 0) _renderer.flipX = MC.horizontalInput < 0;
-        if (rb.linearVelocityY > 0)
+
+        PlayerState newState = GetState();
+
+        if (newState != currentState)
         {
-            animator.CrossFade(jump, 0, 0);
-        }
-        else if (rb.linearVelocityY < 0)
-        {
-            animator.Play(fall);
-        }
-        else if(rb.linearVelocityX != 0)
-        {
-            animator.CrossFade(run, 0, 0);
-        }
-        else
-        {
-            animator.Play(idle);
+            currentState = newState;
+            PlayAnimation(currentState);
         }
     }
 
- 
+    private PlayerState GetState()
+    {
+        if (rb.linearVelocityY > 0)
+        {
+            return PlayerState.Jump;
+        }
+        else if (rb.linearVelocityY < 0)
+        {
+            return PlayerState.Fall;
+        }
+        else if (rb.linearVelocityX != 0)
+        {
+            return PlayerState.Run;
+        }
+        else
+        {
+            return PlayerState.Idle;
+        }
+    }
+
+    private void PlayAnimation(PlayerState state)
+    {
+        switch (state)
+        {
+            case PlayerState.Idle:
+                animator.Play(idle);
+                break;
+            case PlayerState.Run:
+                animator.Play(run);
+                break;
+            case PlayerState.Jump:
+                animator.Play(jump);
+                break;
+            case PlayerState.Fall:
+                animator.Play(fall);
+                break;
+        }
+
+    }
+
+
 }
 
 
