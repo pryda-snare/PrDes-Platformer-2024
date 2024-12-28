@@ -1038,8 +1038,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\nUse this loop to create a stair to door\n\nfor (int i = 0; i < a; i++)\n       
-    {\n                initPosition.x =+ b;\n                initPosition.y =+ c;\n        
-    }\n\nHold shift to decrease number"
+    {\n                initPosition.x =+ b;\n                initPosition.y =+ c;\n\t     
+    Create platform;\n         }\n\nHold shift to decrease number"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}

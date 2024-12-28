@@ -448,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToshow: {fileID: 1475602549}
   otherobject: {fileID: 1078374399}
+  otherscript: {fileID: 1078374405}
 --- !u!1001 &235529384
 PrefabInstance:
   m_ObjectHideFlags: 0

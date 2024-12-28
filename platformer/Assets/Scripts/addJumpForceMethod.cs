@@ -3,7 +3,7 @@ using TMPro;
 
 public class addJumpForceMethod : MonoBehaviour
 {
-    private bool check = false;
+    private bool InTrigger = false;
     private bool isEnabled = false;
     public TextMeshProUGUI textToshow;
 
@@ -18,15 +18,15 @@ public class addJumpForceMethod : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
 
         //if (col.gameObject.tag == "Player" && check == false && isEnabled == true)
-        if (col.gameObject.tag == "Player" && !check && isEnabled)
+        if (col.gameObject.tag == "Player" && !InTrigger && isEnabled)
         {
             otherscript.number++;
             textToshow.text = "" + otherscript.number;
-            check = true;
+            InTrigger = true;
         }
         else
         {
@@ -38,7 +38,7 @@ public class addJumpForceMethod : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            check = false;
+            InTrigger = false;
         }
     }
 

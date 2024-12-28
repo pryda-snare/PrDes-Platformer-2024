@@ -1,15 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-//not having an if else statement in this script made do some weird workarounds.
 
-public class addjumpforceWithoutIf : MonoBehaviour
+public class addjumpforceWithoutIf : addJumpForceMethod
 {
-    public TextMeshProUGUI textToshow;
+    //public TextMeshProUGUI textToshow;
     private int val = 1;
 
-    private addToJumpForce otherscript;
-    public GameObject otherobject;
+    //private addToJumpForce otherscript;
+    //public GameObject otherobject;
 
     private void Start()
     {

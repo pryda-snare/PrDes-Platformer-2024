@@ -1,6 +1,8 @@
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 using System.Collections.Generic;
+using System.Diagnostics;
+
 
 public class LoopScript : MonoBehaviour
 {
@@ -13,17 +15,11 @@ public class LoopScript : MonoBehaviour
     private List<GameObject> clonesList = new List<GameObject>();
  
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         initPosition = platform.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 void OnTriggerEnter2D(Collider2D col)
     {
@@ -36,18 +32,10 @@ void OnTriggerEnter2D(Collider2D col)
 
         for (int i = 0; i < a; i++)
         {
-            for (int j = 0; j < b; j++)
-            {
-                initPosition.x += 1;
-            }
-            for (int k = 0; k < c; k++)
-                {
-                    initPosition.y += 1;
-                }
+        initPosition.x += b;
+        initPosition.y += c;
         GameObject clone = Instantiate(platform, initPosition, Quaternion.identity);
         clonesList.Add(clone);
         }
     }
-
 }
-
