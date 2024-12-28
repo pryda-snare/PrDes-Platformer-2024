@@ -10,7 +10,8 @@ public class FinalDoor : MoveUP
 
  void Update()
     {
-        text2.text = "currently " + Fruits + " Fruits in level";
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("fruit");
+        text2.text = "currently " + taggedObjects.Length + " Fruits in level";
     }
 
     private void Start()
@@ -20,7 +21,7 @@ public class FinalDoor : MoveUP
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.name == "Player" || col.gameObject.tag =="Player")
         {
             if (timesCompleted < timesToWin)
             {

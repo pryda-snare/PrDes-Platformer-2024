@@ -18,10 +18,11 @@ public class DeathCollider : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.name == "Player")
         {
             SceneManager.LoadScene(level);
         }
+        else { Destroy(col); }
     }
 
 
