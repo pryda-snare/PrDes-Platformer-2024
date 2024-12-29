@@ -7,6 +7,15 @@ public class EnemyController : MonoBehaviour
 {
     public GameObject target;
 
+    private void Start()
+    {
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject obj in taggedObjects)
+        {
+            target = obj;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

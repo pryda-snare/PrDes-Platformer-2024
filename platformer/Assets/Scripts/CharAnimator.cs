@@ -9,7 +9,7 @@ public class CharAnimator : MonoBehaviour
     public SpriteRenderer _renderer;
     public MovementController MC;
     public string idle = "playerIdle";
-    public string run = "playRun";
+    public string run = "playerRun";
     public string fall = "playerFall";
     public string jump = "playerJump";
 

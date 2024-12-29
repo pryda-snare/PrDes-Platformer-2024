@@ -13,18 +13,22 @@ public class DeathCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player")
+        if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(level);
+            if (col.gameObject.name == "Player")
+            {
+                if (col.transform.position.y <= gameObject.transform.position.y)
+                {
+                    SceneManager.LoadScene(level);
+                }
+                else { Destroy(gameObject); }
+            }
+            else { Destroy(col); }
         }
-        else { Destroy(col); }
     }
-
-
-
 }

@@ -39,4 +39,13 @@ public class GameController : MonoBehaviour
         
         return Instantiate(enemyPrefab, new Vector3(randX, randY, 0), Quaternion.identity);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            SpawnEnemyRandomPos();
+        }
+    }
 }

@@ -16,7 +16,6 @@ public class applyTag : MonoBehaviour
         TagToGet = Tags[GetIndex];
         GetIndex++;
         if (GetIndex >= Tags.Length) { GetIndex = 0; }
-        Debug.Log(TagToGet);
         return TagToGet;
     }
 
@@ -25,7 +24,6 @@ public class applyTag : MonoBehaviour
         TagToSet = Tags[SetIndex];
         SetIndex++;
         if (SetIndex >= Tags.Length) { SetIndex = 0; }
-        Debug.Log(TagToSet);
         return TagToSet;
     }
 
@@ -35,9 +33,7 @@ public class applyTag : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("penis  "+TagToGet+ "  " + GetIndex);
             GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag(TagToGet);
-            Debug.Log(TagToGet);
             foreach (GameObject obj in taggedObjects)
             {
                 obj.tag = TagToSet;
