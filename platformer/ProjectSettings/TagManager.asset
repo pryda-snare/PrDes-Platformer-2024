@@ -6,9 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Ground
-  - butt
   - txt
   - fruit
+  - button
   layers:
   - Default
   - TransparentFX

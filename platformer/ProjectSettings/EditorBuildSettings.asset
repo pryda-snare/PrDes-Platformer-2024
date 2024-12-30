@@ -11,5 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lesson2.unity
     guid: caeffe302426f458a9b775a4b2c08697
+  - enabled: 1
+    path: Assets/Scenes/lesson3.unity
+    guid: edb8cd5d3c85c40d8bb8e659940c5faa
+  - enabled: 1
+    path: Assets/Scenes/lesson4.unity
+    guid: 3047987100eaa4b4cb2e922095cdf93e
+  - enabled: 1
+    path: Assets/Scenes/win.unity
+    guid: 529d2672cec0d44208a4fda774fcd52f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

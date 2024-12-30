@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathCollider : MonoBehaviour
 {
+    public enum EType { spike, enemy }; 
+    public EType type; // Variable to set the type of collider (spike or enemy)
     private string level;
 
     void Start()
@@ -10,25 +12,35 @@ public class DeathCollider : MonoBehaviour
         level = SceneManager.GetActiveScene().name;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        switch (type)
         {
-            if (col.gameObject.name == "Player")
-            {
-                if (col.transform.position.y <= gameObject.transform.position.y)
+            case EType.spike:
+                if (col.gameObject.name == "Player")
                 {
                     SceneManager.LoadScene(level);
                 }
-                else { Destroy(gameObject); }
-            }
-            else { Destroy(col); }
+                else
+                {
+                    Destroy(col.gameObject);
+                }
+                break;
+
+            case EType.enemy:
+                if (col.gameObject.CompareTag("Player") && gameObject.CompareTag("Enemy"))
+                {
+                    if (col.gameObject.name == "Player")
+                    {
+                        if (col.transform.position.y <= transform.position.y)
+                        {
+                            SceneManager.LoadScene(level);
+                        }
+                        else { Destroy(gameObject); } // Destroy the enemy if hit from above}
+                    }
+                    else { Destroy(col.gameObject); } // Destroy other objects colliding with the enemy
+                }
+                break;
         }
     }
 }

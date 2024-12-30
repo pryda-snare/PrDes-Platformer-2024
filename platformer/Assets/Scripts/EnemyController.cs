@@ -7,13 +7,19 @@ public class EnemyController : MonoBehaviour
 {
     public GameObject target;
 
-    private void Start()
+    private void FindTarget()
     {
         GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject obj in taggedObjects)
         {
             target = obj;
         }
+    }
+
+
+    private void Start()
+    {
+        FindTarget();
     }
 
     // Update is called once per frame
@@ -33,21 +39,10 @@ public class EnemyController : MonoBehaviour
             {
                 pos.x += distance;
             }
-            
-            /*if (pos.y > dest.y)
-            {
-                pos.y -= distance;
-            }
-            else
-            {
-                pos.y += distance;
-            }*/
 
             transform.position = pos;
         }
-        else
-        {
-            SceneManager.LoadScene("SampleScene");
-        } 
+        else { FindTarget(); }
+
     }
 }

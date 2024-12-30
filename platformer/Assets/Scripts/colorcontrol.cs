@@ -18,8 +18,8 @@ public class colorcontrol : MonoBehaviour
     {
         if (col.gameObject.tag == "Player" && check == false)
         {
-            //look for butt tag
-            GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("butt");
+            //look for button tag
+            GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("button");
             foreach (GameObject obj in taggedObjects)
             {
                 var colorController = obj.GetComponent<colorcontrol>();
